@@ -1,7 +1,264 @@
+
 #include <iostream>
-#include <string.h>
 using namespace std;
 
+class Complex {
+
+int real, imag;
+
+public:
+void getData() {
+  cin >> real >> imag;
+}
+
+Complex operator +(Complex tempObj) {
+  cout << "Called by object " << real << endl;
+  cout << "Passed object " << tempObj.real << endl;
+  
+  Complex tempResult;
+  tempResult.real = real + tempObj.real;
+  tempResult.imag = imag + tempObj.imag;
+  
+  return tempResult;
+}
+
+void display(){
+  if(imag < 0)
+    cout << real << " - " << imag << " j " << endl;
+    else  
+    cout << real << " + " << imag << " j " << endl;
+}
+
+};
+
+int main() {
+  Complex obj1,obj2,result;
+  obj1.getData();
+  obj2.getData();
+  
+  result = obj1 + obj2;
+  result.display();
+  
+  return 0;
+}
+
+
+/*
+class addString {
+  char string1[20], string2[20];
+
+public:
+void operator +() {
+  cout << "Berfore overload " << " |  " <<  strcat(string1, string2);
+}
+addString(char str1[], char str2[]) {
+  strcpy(string1, str1);
+  strcpy(string2, str2);
+}
+
+};
+
+int main() {
+  char str1[] = "Ankit";
+  char str2[] = "Kumar";
+  addString s1(str1, str2);
+  +s1;
+  
+  
+  return 0;
+}
+*/
+
+/*
+class fnOverload {
+
+private:
+int value = 100;
+int x = 0, y = 0, z = 0;
+
+public:
+    // Function Overloading
+    void print() {
+        cout << "Value: " << value << endl;
+      cout << x << " " << y << " " << z << endl;
+    }
+    // operator overloading
+    void operator ++() {
+      ++x;
+      ++y;
+      ++z;
+    } 
+};
+
+int main() {
+  fnOverload sum;
+  
+  sum.print();
+  cout << "Before overloading" << endl;
+  
+  ++sum;
+  
+  cout << "After overloading" << endl;
+  sum.print();
+  return 0;
+}
+*/
+
+/*
+class FibonacciSeries {
+private:
+int n;
+
+public:
+ FibonacciSeries(int num) : n(num) {}
+
+void printSeries() {
+  int first = 0;
+  int second = 1;
+  for(int i = 0; i < n; i++) {
+    cout << first << " ";
+    int next = first + second;
+     first = second;
+     second = next;
+  }
+  
+}
+};
+
+int main() {
+  int n;
+  cout << "Enter term to print nth fibonacci" << endl;
+  cin >> n;
+  FibonacciSeries series(n);
+  series.printSeries();
+  
+
+  return 0;
+}
+*/
+
+/*
+#include <iostream>
+
+class DecimalToBinaryConverter {
+private:
+    int decimal;
+    int binary;
+
+public:
+    DecimalToBinaryConverter(int dec) : decimal(dec) {
+        binary = 0;
+        int base = 1;
+        
+        while (decimal > 0) {
+            int remainder = decimal % 2;
+            binary += remainder * base;
+            decimal /= 2;
+            base *= 10;
+        }
+    }
+
+    int getBinary() {
+        return binary;
+    }
+};
+
+int main() {
+    int decimal;
+    std::cout << "Enter a decimal number: ";
+    std::cin >> decimal;
+    
+    DecimalToBinaryConverter converter(decimal);
+    int binary = converter.getBinary();
+    
+    std::cout << "Binary representation: " << binary << std::endl;
+    
+    return 0;
+}
+*/
+
+/*
+#include <iostream>
+
+// Function to convert decimal to binary
+int decimalToBinary(int decimal) {
+    int binary = 0;
+    int base = 1;
+    
+    while (decimal > 0) {
+        int remainder = decimal % 2;
+        binary += remainder * base;
+        decimal /= 2;
+        base *= 10;
+    }
+    
+    return binary;
+}
+
+int main() {
+    int decimal;
+    std::cout << "Enter a decimal number: ";
+    std::cin >> decimal;
+    
+    int binary = decimalToBinary(decimal);
+    
+    std::cout << "Binary representation: " << binary << std::endl;
+    
+    return 0;
+}
+*/
+
+/*
+class PrepInsta {
+
+  int *ptr;
+  public:
+  PrepInsta() { 
+  }
+
+PrepInsta(int x) {
+  ptr = new int;
+  *ptr = x;
+}
+
+PrepInsta(const PrepInsta &obj1){
+   ptr = new int;
+  *ptr = *obj1.ptr;
+}
+
+void multiply(int num2){
+  *ptr = *ptr * num2;
+}
+
+void print() {
+  cout << *ptr << endl;
+}
+
+~PrepInsta(){
+  delete ptr;
+}
+
+};
+
+int main() {
+  PrepInsta obj1;
+  PrepInsta obj2 = obj1;
+  cout << "before multiplication" << endl;
+
+  obj1.print();
+  obj2.print();
+
+  obj1.multiply(30);
+  
+  cout << "after multiplication" << endl;
+  obj1.print();
+  obj2.print();
+
+  return 0;
+}
+*/
+
+/*
 class PrepInsta{
   char* prepString;
   public:
@@ -44,7 +301,7 @@ int main() {
   
   return 0;
 }
-
+*/
 /*
 class Parent{
 public:
