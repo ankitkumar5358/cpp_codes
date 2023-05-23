@@ -1,7 +1,263 @@
-
 #include <iostream>
 using namespace std;
 
+class AbsValue {
+
+public:
+int absValue(int num ){
+  return (num < 0) ? -num : num;
+  }
+
+float absValue(float num ){
+  return (num < 0) ? -num : num;
+  }
+};
+
+int main() {
+    AbsValue calculate;
+    int intVal = -10;
+    float floatVal = -20.098;
+
+  int absintVal = calculate.absValue(intVal);
+  float absFloatVal = calculate.absValue(floatVal);
+
+  cout << "Absolute int value is " <<  absintVal << endl;
+  cout << "Absolute float value is " <<  absFloatVal << endl;
+
+    return 0;
+}
+
+
+/*
+#include <iostream>
+using namespace std;
+
+class Parent {
+public :
+virtual void attack () = 0;
+};
+class Child1 : public Parent{
+public:
+void attack() {
+  cout << "Child1 attacked" << endl;
+  }
+};
+class Child2 : public Parent{
+public:
+void attack() {
+  cout << "Child2 attacked" << endl;
+  }
+};
+
+int main() {
+    Parent *parent;
+    Child1 child1;
+    Child1 child2;
+  
+  parent = &child1;
+    parent -> attack();
+  
+    parent = &child2;
+    parent -> attack();
+    return 0;
+}
+
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+class Base {
+public:
+    virtual void display() {
+        cout << "Display function base class" << endl;
+    }
+};
+
+class Child1 : public Base {
+public:
+    void display() override {
+        cout << "Display function child1 class" << endl;
+    }
+};
+
+class Child2 : public Base {
+public:
+    void display() override {
+        cout << "Display function child2 class" << endl;
+    }
+};
+
+int main() {
+    Base* base;
+    Child1 child1;
+    Child2 child2;
+
+    base = &child1;
+    base->display(); // Calls display() of Child1
+
+    base = &child2;
+    base->display(); // Calls display() of Child2
+
+    return 0;
+}
+*/
+
+/*
+#include <iostream>
+using namespace std;
+
+class Pokemon{
+private :
+int weight, height;
+char type[20];
+public:
+
+virtual void attack () = 0;
+
+};
+
+class Pikachu : public Pokemon {
+public:
+void attack() {
+  cout << "Pikachu has given thunderbolt" << endl; 
+}
+
+};
+
+int main() {
+  Pokemon *pokePtr;
+  Pikachu pikachu;
+  pokePtr = &pikachu;
+  pokePtr -> attack();
+  pikachu.attack();
+  return 0;
+}
+
+/*
+#include <iostream>
+using namespace std;
+
+class Pokemon{
+private :
+int weight, height, type;
+
+public:
+void attack() {
+  cout << "Pokemon attacked" << endl; 
+}
+void defend() {
+  cout << "Pokemon defended" << endl;
+}
+
+};
+
+class Pikachu : public Pokemon {
+public:
+void attack() {
+  cout << "Pikachu has given thunderbolt" << endl; 
+}
+void defend() {
+  cout << "Pikachu ran" << endl;
+}
+
+
+};
+
+int main() {
+  // Pikachu p1;
+  // p1.attack();
+  // p1.defend();  
+  Pokemon *pokePtr;
+  Pikachu pikachu;
+  pokePtr = &pikachu;
+  pokePtr -> attack();
+  pokePtr -> defend();
+  return 0;
+}
+
+
+
+/*
+#include <iostream>
+using namespace std;
+
+// operator overload
+class Student {
+int feet = 0, inches = 0;
+public:
+void getHeight(int f, int i) {
+  if(f >= 0 && (i >= 0 && i < 12)){
+    feet = f;
+    inches = i;
+  }
+  // else{
+  //   cout << "Wrong height, default 0,0 will be taken" << endl;
+  // }
+}
+
+bool operator == (Student obj){ // overload
+  if(feet == obj.feet && inches == obj.inches)
+    return true;
+  
+  return false;
+}
+
+};
+
+int main() {
+  Student s1,s2;
+  s1.getHeight(5,10);
+  s2.getHeight(5,20);
+
+  if(s1 == s2){
+     cout << "Both are of equal height" << endl;
+  }
+  else{
+    cout << "Not Equal height" << endl;
+  }
+  
+  return 0;
+}
+
+
+
+/*
+// constructor overload
+class Demo {
+
+public:
+int a,b;
+Demo(){
+  a = 0;
+  b = 0;
+  cout << "obj1 called be as (a & b) where a = 0, b = 0" << endl ;
+}
+
+Demo(int x){
+  a = x;
+  b = 0;
+  cout << "obj2 called be as (a & b) where a = 5, b = 0" << endl ;
+}
+
+Demo(int x,int y){
+  a = x;
+  b = y;
+  cout << "obj3 called be as (a & b) where a = 5, b = 10" << endl ;
+}
+};
+
+int main() {
+  Demo obj1;
+  Demo obj2(5);
+  Demo obj3(5,10);
+  
+  return 0;
+}
+*/
+
+/*
 class Complex {
 
 int real, imag;
@@ -41,7 +297,7 @@ int main() {
   
   return 0;
 }
-
+*/
 
 /*
 class addString {
