@@ -8,8 +8,6 @@ int main() {
     // sum of current term is =  previous + prevoius (previous ) number
 
     int n = 6;
-    // cout << "Enter a number to find nth fibonacci series" << endl;
-    // cin >> n;
 
     int first = 0, second = 1;
     cout << first << " " << second  << " ";

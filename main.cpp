@@ -1,3 +1,44 @@
+
+#include <iostream>
+using namespace std;
+
+class Person {
+// encapsulation code
+private:
+string name;
+int age;
+
+public:
+    void setName(std::string name) {
+      this->name = name;
+    }
+
+    std::string getName() {
+      return name;
+    }
+
+    void setAge(int age) {
+      this->age = age;
+    }
+
+    int getAge() {
+      return age;
+    }
+
+};
+
+int main() {
+  Person p;
+  p.setName("ankit");
+  p.setAge(20);
+
+  p.getName();
+  p.getAge();
+  
+  return 0;
+}
+
+/*
 #include <iostream>
 using namespace std;
 
